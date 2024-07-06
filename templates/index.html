@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>Strategy Game</h1>
+        <div id="loginContainer">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="register()">Register</button>
+        </div>
+        <div id="gameInterface" style="display: none;">
+            <div id="countryInfo"></div>
+            <div id="actions">
+                <button onclick="increaseResources()">Increase Resources</button>
+                <button onclick="startWar()">Start War</button>
+                <button onclick="buyGold()">Buy Gold</button>
+                <button onclick="buyExpansion()">Buy Expansion Pack</button>
+            </div>
+            <canvas id="gameMap" width="800" height="600"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>
