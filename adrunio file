@@ -1,0 +1,7 @@
+/game
+    ├── templates
+    │   └── index.html
+    ├── static
+    │   ├── styles.css
+    │   └── game.js
+    └── app.py
